@@ -1,0 +1,26 @@
+.exercise {
+  border: 1px solid red;
+}
+.exercise .exercise-title {
+  color: green;
+  text-decoration: underline blue;
+  text-align: center;
+}
+.exercise .exe-paragraph {
+  display: flex;
+  padding: 20px;
+  text-align: center;
+}
+.exercise .exe-paragraph article {
+  border: 1px solid green;
+  padding: 10px;
+  font-size: 15px;
+}
+.exercise .exe-paragraph article .item1 {
+  color: blue;
+}
+.exercise .exe-paragraph article .item2 {
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
