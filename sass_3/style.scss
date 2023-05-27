@@ -1,0 +1,36 @@
+@use 'mixins.scss' ;
+@use 'functions.scss' as f;
+
+
+.exercise{
+    border: f.rem($num: 1) solid mixins.$color-primary;
+    .exercise-title{
+        color: mixins.$color-tertiary;
+        text-decoration: underline mixins.$color-secondary;
+        text-align: center;
+        margin-top: f.rem($num: 30);
+    }
+    .exe-paragraph{
+        display: flex;
+        padding: f.rem($num: 5) f.rem($num: 20);
+        text-align: center;
+
+        article{
+            @include mixins.color-mix(mixins.$color-secondary, mixins.$color-tertiary, f.rem($num: 16)){
+              padding: f.rem($num: 10); 
+
+            .item2{
+                color: mixins.$color-primary;
+            }  
+            }
+
+        }
+    }
+    .bottom-items{
+        @include mixins.color-mix(mixins.$color-tertiary, mixins.$color-secondary, f.rem($num: 24)){
+        margin: f.rem($num: 20);
+        text-align: center;
+        padding: f.rem($num: 10) f.rem($num: 5);
+        }
+    }
+}
