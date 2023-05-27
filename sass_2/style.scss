@@ -1,9 +1,9 @@
 $color-primary: red;
 $color-tertiary: green;
 $color-secondary: blue;
-$space: 1rem;
 
-@mixin color-mix ($color, $border-color, $font-size){
+
+@mixin color-mix ($color: $color, $border-color: $border-color, $font-size: 1rem){
     color: $color;
     border: 1px solid $border-color;
     font-size: $font-size;
@@ -24,7 +24,7 @@ $space: 1rem;
         text-align: center;
 
         article{
-            @include color-mix($color-secondary, $color-tertiary, $space){
+            @include color-mix($color-secondary, $color-tertiary){
               padding: 10px; 
 
             .item2{
@@ -35,7 +35,7 @@ $space: 1rem;
         }
     }
     .bottom-items{
-        @include color-mix($color-tertiary, $color-secondary, calc($space + 0.5rem)){
+        @include color-mix($color-tertiary, $color-secondary, 24px){
         margin: 20px ;
         text-align: center;
         padding: 10px 0;
