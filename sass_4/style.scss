@@ -1,0 +1,64 @@
+@use 'mixins.scss' ;
+@use 'functions.scss' as f;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.exercise{
+    border: f.rem($num: 1) solid mixins.$color-primary;
+
+    .div-text{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+        
+    }
+    %text{
+        color: mixins.$color-tertiary;
+        text-decoration: underline mixins.$color-secondary;
+        text-align: center;
+        margin-top: f.rem($num: 30);
+    }
+
+    .h1-class {
+        @extend %text;
+        
+        &--h2{
+            @extend .h1-class;        
+            padding: 1rem;
+            border: f.rem($num: 1) solid mixins.$color-primary;
+            margin-bottom: f.rem($num: 10);
+    }
+        }
+
+    
+
+        
+    .exe-paragraph{
+        display: flex;
+        padding: f.rem($num: 5) f.rem($num: 20);
+        text-align: center;
+
+        article{
+            @include mixins.color-mix(mixins.$color-secondary, mixins.$color-tertiary, f.rem($num: 16)){
+              padding: f.rem($num: 10); 
+
+            .item2{
+                color: mixins.$color-primary;
+            }  
+            }
+
+        }
+    }
+    .bottom-items{
+        @include mixins.color-mix(mixins.$color-tertiary, mixins.$color-secondary, f.rem($num: 24)){
+        margin: f.rem($num: 20);
+        text-align: center;
+        padding: f.rem($num: 10) f.rem($num: 5);
+        }
+    }
+}
