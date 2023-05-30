@@ -1,0 +1,123 @@
+$color-primary: red;
+$color-tertiary: green;
+$color-secondary: blue;
+$color-black: black;
+$color-white: white;
+$color-light: lighten(white, 5%);  
+$color-dark: darken(black, 5%); 
+
+@use 'mixins.scss';
+@use 'functions.scss' as f;
+@use "sass:color";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.exercise {
+    border: f.rem($num: 1) solid $color-primary;
+
+    .div-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+        .h1-class {
+        @extend %text;
+
+        &--h2 {
+            @extend .h1-class;
+            padding: 1rem;
+            border: f.rem($num: 1) solid $color-primary;
+            margin-bottom: f.rem($num: 10);
+        }
+    }
+    }
+
+    %text {
+        color: $color-tertiary;
+        text-decoration: underline;
+        text-decoration-color: $color-secondary;
+        text-align: center;
+        margin-top: f.rem($num: 30);
+    }
+
+    
+
+    .exe-paragraph {
+        display: flex;
+        padding: f.rem($num: 5) f.rem($num: 20);
+        text-align: center;
+
+        article {
+            @include mixins.color-mix($color-secondary, $color-tertiary, f.rem($num: 16)) {
+                padding: f.rem($num: 10);
+
+                .item2 {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+
+@for $i from 1 to 20 {
+    $bg-color: darken(white, $i * 5%);
+    $text-color: lighten(black, $i * 5%);
+  
+    @if $i == 10 {
+        .num__main {
+          div:nth-child(#{$i}) {
+            background-color: $color-secondary;
+            color: $color-primary;
+          }
+
+      }
+    } @else {
+        .num__main {
+          div:nth-child(#{$i}) {
+            background-color: $bg-color;
+            color: $text-color;
+          }
+        }
+      }
+  }
+  
+  $numbers: (
+    "1rem": 1rem,
+    "2rem": 2rem,
+    "3rem": 3rem
+  );
+  
+  
+    .num__main {
+      display: flex;
+      flex-wrap: wrap; 
+      gap: f.rem($num: 10);
+      justify-content: center;
+      text-align: center;
+      margin: 0 20px;
+  
+      @each $key, $value in $numbers {
+        $font-size: $value;
+  
+        .fs-#{$key} {
+          flex-grow: 1; 
+          width: f.rem(45);
+          height: f.rem(45);
+          border: f.rem(1) solid $color-primary;
+          font-size: $font-size;
+        }
+      }
+    }
+
+    
+
+    .bottom-items {
+        @include mixins.color-mix($color-tertiary, $color-secondary, f.rem($num: 24)) {
+            margin: f.rem($num: 20);
+            text-align: center;
+            padding: f.rem($num: 10) f.rem($num: 5);
+        }
+    }
+}
