@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.prova {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+.prova aside {
+  background: grey;
+  width: 20%;
+  padding: 20px;
+  height: 100%;
+}
+.prova .container, .prova .container__footer {
+  background: grey;
+  padding: 20px;
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.prova .container button, .prova .container__footer button {
+  padding: 10px;
+  background-color: white;
+  color: aqua;
+  border-radius: 10px;
+}
+.prova .container__footer {
+  margin-top: 10px;
+}
+.prova .container__footer p {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=style.css.map */

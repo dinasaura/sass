@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.prova{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    
+     aside{
+        background: grey;
+        width: 20%;
+        padding: 20px;
+        height: 100%;
+    }
+
+    .container{
+            background: grey;
+            padding: 20px;
+            flex: 1;
+            flex-direction: column;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            button{
+                padding: 10px;
+                background-color: white;
+                color: aqua;
+                border-radius: 10px;
+            }
+        
+    }
+
+    .container__footer {
+      @extend .container;
+      margin-top: 10px;
+        p{
+            font-size: 20px;
+            text-decoration: underline;
+        }
+
+    }
+
+}
+
+   
